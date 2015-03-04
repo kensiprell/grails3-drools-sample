@@ -5,6 +5,8 @@ buildscript {
 		drooolsConfigurationType = 'droolsConfigGroovy'
 		// TODO add to README
 		droolsDrlFileLocation = 'src/rules'
+		// TODO add to README
+		droolsPluginVersion = '0.1-SNAPSHOT'
     }
     repositories {
         mavenLocal()
@@ -12,7 +14,7 @@ buildscript {
     }
     dependencies {
 		// TODO add to README
-		classpath "org.grails.plugins:grails3-drools:0.1-SNAPSHOT:gradle-plugin@jar"
+		classpath "org.grails.plugins:grails3-drools:$droolsPluginVersion:gradle-plugin@jar"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.0.20'
     }
@@ -68,7 +70,7 @@ dependencies {
   compile "org.grails:grails-web-boot"
 
 	// TODO add to README
-  compile "org.grails.plugins:grails3-drools:0.1-SNAPSHOT"
+  compile "org.grails.plugins:grails3-drools:$droolsPluginVersion"
   compile "org.grails.plugins:hibernate"
   compile "org.grails.plugins:cache"
   compile "org.hibernate:hibernate-ehcache"
