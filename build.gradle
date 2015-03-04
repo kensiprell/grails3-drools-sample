@@ -11,10 +11,8 @@ buildscript {
         maven { url "http://repo.grails.org/grails/core" }
     }
     dependencies {
-		//classpath "org.grails.plugins:grails3-drools-grails-drools-gradle-plugin:0.1-SNAPSHOT"
-		// TODO correct and add to README
-		classpath "org.grails.plugins:grails-drools-gradle-plugin:0.1-SNAPSHOT"
-		//classpath "org.grails.plugins:grails3-drools:0.1-SNAPSHOT"
+		// TODO add to README
+		classpath "org.grails.plugins:grails3-drools:0.1-SNAPSHOT:gradle-plugin@jar"
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath 'com.bertramlabs.plugins:asset-pipeline-gradle:2.0.20'
     }
