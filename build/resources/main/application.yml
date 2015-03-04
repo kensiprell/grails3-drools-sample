@@ -17,7 +17,7 @@ spring:
 grails:
   plugin:
     drools:
-      droolsRuleDomainClass: grails.plugin.drools_sample.DroolsRule
+      droolsRuleDomainClass: com.plugin.drools.DroolsRule
 
 ---
 grails:

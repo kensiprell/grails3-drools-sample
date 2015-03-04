@@ -1,4 +1,4 @@
-package grails.plugin.drools_sample
+package com.plugin.drools
 
 import org.kie.api.runtime.KieSession
 import org.kie.api.runtime.StatelessKieSession
