@@ -1,4 +1,4 @@
-import grails.plugin.drools_sample.DroolsRule
+import grails.plugin.drools.DroolsRule
 
 class BootStrap {
 

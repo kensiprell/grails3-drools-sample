@@ -5,9 +5,9 @@ grails:
     defaultPackage: grails3app
 info:
     app:
-        name: '@info.app.name@'
-        version: '@info.app.version@'
-        grailsVersion: '@info.app.grailsVersion@'
+        name: 'grails3-drools-sample'
+        version: 'unspecified'
+        grailsVersion: '3.0.0.M2'
 spring:
   groovy:
     template:
