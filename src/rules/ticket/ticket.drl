@@ -1,3 +1,5 @@
+package rules.ticket
+
 import com.plugin.drools.Customer
 import com.plugin.drools.Ticket
 
@@ -7,7 +9,7 @@ rule "New Ticket"
 		customer : Customer()
 		ticket : Ticket(customer == customer, status == "New")
 	then
-		System.out.println("Start processing Ticket # " + ticket.getId());
+		System.out.println("Start processing Ticket # " + ticket.getId() + " with customer " + customer.getName());
 end
 
 rule "Bronze Priority"
@@ -16,8 +18,7 @@ rule "Bronze Priority"
 		ticket : Ticket(customer == customer, status == "New")
 	then
 		System.out.println("Firing rule Bronze Priority for Ticket # " + ticket.getId());
-		ticket.setStatus("Pending");
-		update(ticket);
+		modify(ticket) { setStatus("Pending") };
 end
   
 rule "Silver Priority"
@@ -26,8 +27,7 @@ rule "Silver Priority"
 		ticket : Ticket(customer == customer, status == "New")
 	then
 		System.out.println("Firing rule Silver Priority for Ticket # " + ticket.getId());
-		ticket.setStatus("Escalate");
-		update(ticket);	
+		modify(ticket) { setStatus("Escalate") };
 end
 
 rule "Gold Priority"
@@ -36,13 +36,12 @@ rule "Gold Priority"
 		ticket : Ticket(customer == customer, status == "New")
 	then
 		System.out.println("Firing rule Gold Priority for Ticket # " + ticket.getId());
-		ticket.setStatus("Escalate");
-		update(ticket);	
+		modify(ticket) { setStatus("Escalate") };
 end
 
 rule "Special Discount"
 	when
-		customer : Customer (subscription == "Gold")
+		customer : Customer(subscription == "Gold")
 		ticket : Ticket(customer == customer, status == "Escalate")
 	then
 		System.out.println("Firing rule Special Discount for Ticket # " + ticket.getId());

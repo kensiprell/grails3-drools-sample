@@ -3,7 +3,7 @@ package com.plugin.drools
 class Ticket {
 	int id
 	Customer customer
-	String status
+	String status = "New"
 
 	Ticket(Integer id, Customer customer) {
 		this.id = id

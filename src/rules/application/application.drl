@@ -1,3 +1,5 @@
+package rules.application
+
 import com.plugin.drools.Applicant
 import com.plugin.drools.Application
 
@@ -5,14 +7,28 @@ rule "Applicant is over 18"
 when
     $a : Applicant(age > 18)
 then
-    System.out.println("Applicant is over 18.");
+    System.out.println($a.getName() + " is over 18.");
 end
 
 rule "Application was made this year"
 when
     $a : Application(dateApplied > "01-Jan-2015")
 then
-    System.out.println("Application was made this year.");
+    System.out.println("Application was made this year: " + $a.getDateApplied());
+end
+
+rule "Applicant is not over 18"
+when
+    $a : Applicant(age < 18)
+then
+    System.out.println($a.getName() + " is not over 18.");
+end
+
+rule "Application was not made this year"
+when
+    $a : Application(dateApplied < "01-Jan-2015")
+then
+    System.out.println("Application was not made this year: " + $a.getDateApplied());
 end
 
 rule "Application is valid"
@@ -20,6 +36,6 @@ when
     $p : Applicant(age > 18)
     $a : Application(dateApplied > "01-Jan-2015")
 then
-    System.out.println("Application is valid.");
+    System.out.println("Application for " + $p.getName() + " is valid.");
     $a.setValid(true);
 end
