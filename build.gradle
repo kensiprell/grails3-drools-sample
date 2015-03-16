@@ -7,6 +7,14 @@ buildscript {
 		droolsDrlFileLocation = 'src/rules'
 		// TODO add to README
 		droolsPluginVersion = '0.1-SNAPSHOT'
+		// TODO add all of these to README
+		droolsVersion = "6.2.0.Final"
+		comSunXmlBindVersion = "2.2.11"
+		janinoVersion = "2.7.5"
+		xstreamVersion = "1.4.7"
+		ecjVersion = "4.4"
+		mvelVersion = "2.2.2.Final"
+		antlrRuntimeVersion = "3.5.2"
 	}
 	repositories {
 		mavenLocal()
@@ -37,6 +45,7 @@ apply plugin: "idea"
 ext {
 	grailsVersion = project.grailsVersion
 	gradleWrapperVersion = project.gradleWrapperVersion
+	// TODO all all of these to README
 }
 
 version "0.1"
@@ -63,6 +72,10 @@ dependencyManagement {
 }
 
 dependencies {
+	// TODO add to README
+	compile droolsPluginCompile
+	// TODO add to README
+	runtime droolsPluginRuntime
 	compile "org.springframework.boot:spring-boot-starter-logging"
 	compile "org.springframework.boot:spring-boot-starter-actuator"
 	compile "org.springframework.boot:spring-boot-autoconfigure"
